@@ -1,7 +1,8 @@
 # UMAP Model for Basic Metabolic Panel Results
-*Written and maintained by Nick Spies, MD*.
 
 A Production Repository for the Automated Detection of Laboratory Errors in BMP Results Using UMAP.
+
+*Written and maintained by Nick Spies, MD*.
 
 --- 
 
