@@ -37,5 +37,5 @@ data <- makeNumeric(data, model) %>% addGap() %>% na.omit()
 
 embed <- model |> bake(data)
 
-filename <- paste0("../Data/umap_output_", round(as.numeric(Sys.time())), ".tsv")
+filename <- paste0("../umap_output_", round(as.numeric(Sys.time())), ".tsv")
 write_tsv(embed, filename)
