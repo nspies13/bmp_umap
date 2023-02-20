@@ -7,7 +7,7 @@ A Production Repository for the Automated Detection of Laboratory Errors in BMP 
 
 2) Clone git repo to local machine 
 	- git clone https://github.com/nspies13/bmp_umap.git
-	- If you are new to git, check here[https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository] for how-to guides
+	- If you are new to git, check [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) for how-to guides.
 
 3) Format Input Data to match input_file.tsv
 	- Each row should be a unique BMP result, without NA or non-numeric results.
