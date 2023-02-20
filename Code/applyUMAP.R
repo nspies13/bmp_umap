@@ -5,9 +5,6 @@ suppressPackageStartupMessages(library(embed))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(stringr))
 
-##### Read Data #####
-args = commandArgs(trailingOnly=TRUE)
-
 ##### Helpers #####
 checkNames <- function(data, model){
   
@@ -33,7 +30,7 @@ if (checkNames(data, model)){
   stop("Incorrect File Header. Must contain columns for named 'sodium', 'chloride', 'potassium_plas', 'co2_totl', 'bun', 'creatinine', 'calcium', 'glucose'")
 }
 
-data <- makeNumeric(data, model) %>% addGap() %>% na.omit()
+data <- makeNumeric(data, model) |> addGap() |> na.omit()
 
 embed <- model |> bake(data)
 
