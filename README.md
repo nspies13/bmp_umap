@@ -19,7 +19,7 @@ git clone https://github.com/nspies13/bmp_umap.git
 - If you are new to git, check [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) for how-to guides.
 
 
-### 3) Format Input Data to match input_file.tsv
+### 3) Replace /Data/input_file.tsv with your desired input data. 
 - Each row should be a unique BMP result, without NA or non-numeric results.
 - All 8 components of the BMP should be included in their own columns with the following names: 
 	- sodium
