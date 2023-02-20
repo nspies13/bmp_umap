@@ -8,7 +8,7 @@ A Production Repository for the Automated Detection of Laboratory Errors in BMP 
 # Install Instructions
 
 ### 1) Install Docker. 
-	- https://docs.docker.com/get-docker/
+[Install Instructions](https://docs.docker.com/get-docker/).
 
 
 ### 2) Clone git repo to local machine 
