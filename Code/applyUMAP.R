@@ -3,6 +3,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidymodels))
 suppressPackageStartupMessages(library(embed))
 suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(here))
 suppressPackageStartupMessages(library(stringr))
 
 ##### Helpers #####
@@ -23,9 +24,9 @@ addGap <- function(data){
 }
 
 ##### Apply Model #####
-model <- bundle::unbundle(readRDS("/bmp_umap/Model/UMAP_bmp_results_20230208")) |> prep()
+model <- bundle::unbundle(readRDS(here("Model/UMAP_bmp_results_20230208"))) |> prep()
 
-data <- read_delim("/bmp_umap/Data/input_file.tsv", show_col_types = FALSE)
+data <- read_delim(here("Data/input_file.tsv"), show_col_types = FALSE)
 if (checkNames(data, model)){
   stop("Incorrect File Header. Must contain columns for named 'sodium', 'chloride', 'potassium_plas', 'co2_totl', 'bun', 'creatinine', 'calcium', 'glucose'")
 }
@@ -34,5 +35,5 @@ data <- makeNumeric(data, model) |> addGap() |> na.omit()
 
 embed <- model |> bake(data)
 
-filename <- paste0("/bmp_umap/umap_output_", round(as.numeric(Sys.time())), ".tsv")
+filename <- paste0(here(), "/umap_output_", round(as.numeric(Sys.time())), ".tsv")
 write_tsv(embed, filename)

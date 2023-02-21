@@ -5,16 +5,13 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y libcurl4-openssl-dev libfontconfig1-dev libssl-dev libxml2-dev
 
 # Get and install system dependencies
-RUN R -e 'install.packages(c("dplyr", "uwot", "tidymodels", "embed", "readr", "stringr", "bundle"), repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages(c("dplyr", "uwot", "here", "tidymodels", "embed", "readr", "stringr", "bundle"), repos = "http://cran.us.r-project.org")'
 
 RUN mkdir bmp_umap/
 
 WORKDIR bmp_umap/
 
-RUN mkdir Code
 RUN mkdir Model
-RUN mkdir Data
 
-COPY Code/applyUMAP.R Code/applyUMAP.R
-COPY Model/UMAP_bmp_results_20230208 Model/
-COPY Data/input_file.tsv Data/
+COPY --chmod=701 Model/UMAP_bmp_results_20230208 Model/
+
