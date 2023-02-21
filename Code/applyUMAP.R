@@ -24,7 +24,7 @@ addGap <- function(data){
 }
 
 ##### Apply Model #####
-model <- bundle::unbundle(readRDS(here("Model/UMAP_bmp_results_20230208"))) |> prep()
+model <- bundle::unbundle(readRDS("/home/Model/UMAP_bmp_results_20230208")) |> prep()
 
 data <- read_delim(here("Data/input_file.tsv"), show_col_types = FALSE)
 if (checkNames(data, model)){

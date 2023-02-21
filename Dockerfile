@@ -7,11 +7,7 @@ RUN apt-get update && apt-get install -y libcurl4-openssl-dev libfontconfig1-dev
 # Get and install system dependencies
 RUN R -e 'install.packages(c("dplyr", "uwot", "here", "tidymodels", "embed", "readr", "stringr", "bundle"), repos = "http://cran.us.r-project.org")'
 
-RUN mkdir bmp_umap/
+RUN mkdir /home/Model
 
-WORKDIR bmp_umap/
-
-RUN mkdir Model
-
-COPY --chmod=701 Model/UMAP_bmp_results_20230208 Model/
+COPY --chmod=701 Model/UMAP_bmp_results_20230208 /home/Model
 
