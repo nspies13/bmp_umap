@@ -36,7 +36,7 @@ git clone https://github.com/nspies13/bmp_umap.git
 
 ### 4) Run docker command, where <dir_path> is the absolute path to where the repository is cloned. 
 ```	
-docker run -v <dir_path>:/bmp_umap nspies13/bmp_umap:prod Rscript Code/applyUMAP.R
+ docker run -v <dir_path>/bmp_umap:/bmp_umap nspies13/bmp_umap:prod Rscript /bmp_umap/Code/applyUMAP.R
 ```
 
 ### 5) If successful, a new file should have been created in <dir_path>.
